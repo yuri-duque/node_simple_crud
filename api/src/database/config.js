@@ -1,3 +1,3 @@
 module.exports = {
-  uri: "mongodb://localhost:27017/$seu_banco",
+  uri: "mongodb+srv://application:senha123@cluster0.hkono.mongodb.net/banco_node",
 };
