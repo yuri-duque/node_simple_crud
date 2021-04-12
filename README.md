@@ -31,6 +31,7 @@ para ter certeza que o projeto foi executado corretamente, é necessário só ve
 
 ```bash
 Sua API REST está funcionando na porta 3001
+```
 
 
 
