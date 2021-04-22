@@ -1,0 +1,14 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Node: Lauch Nodemon",
+      "program": "${workspaceFolder}/src/server.ts",
+      "type": "node",
+      "request": "launch",
+      "restart": true,
+      "protocol": "inspector",
+      "console": "integratedTerminal",
+    }
+  ]
+}
