@@ -2,10 +2,10 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Node: Lauch Nodemon",
+      "name": "Node: Attach Nodemon",
       "program": "${workspaceFolder}/src/server.ts",
       "type": "node",
-      "request": "launch",
+      "request": "attach",
       "restart": true,
       "protocol": "inspector",
       "console": "integratedTerminal",

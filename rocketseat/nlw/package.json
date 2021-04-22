@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/server.ts",
+    "dev": "nodemon --inspect src/server.ts",
     "typeorm": "nodemon node_modules/typeorm/cli.js"
   },
   "keywords": [],
@@ -14,6 +14,7 @@
     "express": "^4.17.1",
     "reflect-metadata": "^0.1.13",
     "sqlite3": "^5.0.2",
+    "sucrase": "^3.18.1",
     "typeorm": "^0.2.32"
   },
   "devDependencies": {
