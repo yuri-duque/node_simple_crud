@@ -2,7 +2,7 @@ import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn } fro
 import { v4 as uuid } from "uuid"
 
 @Entity("settings")
-export default class Setting {
+class Setting {
 
     @PrimaryColumn()
     id: string;
@@ -23,3 +23,5 @@ export default class Setting {
         this.id = this.id ?? uuid();
     }
 }
+
+export default Setting;

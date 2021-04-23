@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --inspect src/server.ts",
-    "typeorm": "nodemon node_modules/typeorm/cli.js"
+    "typeorm" : "ts-node node_modules/typeorm/cli.js"
   },
   "keywords": [],
   "author": "",
