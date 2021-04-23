@@ -7,8 +7,8 @@ export default class UsersController {
 
         const service = new UsersService();
 
-        const settings = await service.insert({ email });
+        const user = await service.insert({ email });
 
-        return res.json(settings);
+        return res.json(user);
     }
 }

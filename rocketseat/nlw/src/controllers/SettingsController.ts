@@ -8,9 +8,9 @@ export default class SettingsController {
         try {
             const service = new SettingsService();
 
-            const settings = await service.insert({chat, username});
+            const setting = await service.insert({chat, username});
 
-            return res.json(settings);
+            return res.json(setting);
         }
         catch (ex) {
             return res.status(400).json({
