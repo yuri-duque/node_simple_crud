@@ -8,7 +8,7 @@ export default class SettingsController {
         try {
             const service = new SettingsService();
 
-            const settings = await service.create({chat, username});
+            const settings = await service.insert({chat, username});
 
             return res.json(settings);
         }

@@ -7,11 +7,10 @@ interface ISettingsCreate {
 }
 
 export default class SettingsService {
-    async create({ chat, username }: ISettingsCreate) {
+    async insert({ chat, username }: ISettingsCreate) {
         const settingsRepository = getCustomRepository(SettingsRepository);
 
-        // SELECT * FROM settings WHERE username = "username" limit 1
-        const userAlreadyExists = await settingsRepository.findOne({username});
+        const userAlreadyExists = await  this.findByUsername(username);
 
         if(userAlreadyExists)
             throw new Error("User already exists!");
@@ -21,5 +20,12 @@ export default class SettingsService {
         await settingsRepository.save(settings);
 
         return settings;
+    }
+
+    async findByUsername(username){
+        const settingsRepository = getCustomRepository(SettingsRepository);
+
+        // SELECT * FROM settings WHERE username = "username" limit 1
+        return await settingsRepository.findOne({username});
     }
 }
