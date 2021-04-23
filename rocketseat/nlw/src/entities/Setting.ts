@@ -1,9 +1,8 @@
 import { Entity, Column, CreateDateColumn, UpdateDateColumn, PrimaryColumn } from "typeorm";
-
 import { v4 as uuid } from "uuid"
 
 @Entity("settings")
-class Setting {
+export default class Setting {
 
     @PrimaryColumn()
     id: string;
@@ -24,5 +23,3 @@ class Setting {
         this.id = this.id ?? uuid();
     }
 }
-
-export { Setting }
