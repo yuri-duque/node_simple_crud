@@ -18,7 +18,7 @@ export default class UsersService {
 
         // se nao existir, cadastrar usuario no banco de dados
         const user = usersRepository.create({ email });        
-        await usersRepository.insert(user);
+        await usersRepository.save(user);
 
         // retornar usuario
         return user;
