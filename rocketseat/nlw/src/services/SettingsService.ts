@@ -7,25 +7,27 @@ interface ISettingsCreate {
 }
 
 export default class SettingsService {
-    async insert({ chat, username }: ISettingsCreate) {
-        const settingsRepository = getCustomRepository(SettingsRepository);
+    private _settingsRepository : SettingsRepository;
 
+    constructor(){
+        this._settingsRepository = getCustomRepository(SettingsRepository);
+    }
+
+    async insert({ chat, username }: ISettingsCreate) {
         const userAlreadyExists = await  this.findByUsername(username);
 
         if(userAlreadyExists)
             throw new Error("User already exists!");
 
-        const settings = settingsRepository.create({ chat, username });
+        const settings = this._settingsRepository.create({ chat, username });
 
-        await settingsRepository.save(settings);
+        await this._settingsRepository.save(settings);
 
         return settings;
     }
 
     async findByUsername(username){
-        const settingsRepository = getCustomRepository(SettingsRepository);
-
         // SELECT * FROM settings WHERE username = "username" limit 1
-        return await settingsRepository.findOne({username});
+        return await this._settingsRepository.findOne({username});
     }
 }
